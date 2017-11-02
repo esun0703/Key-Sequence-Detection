@@ -18,8 +18,13 @@
 			pressed.push(e.key);
 			// split the array the length of the secret code.
 			pressed.splice(-secretCode - 1, pressed.length - secretCode.length);
-			console.log(pressed);
 			// if the array contains the secret code then alert or do something
+			if(pressed.join('').includes(secretCode)){
+				// console.log('Correct!!!');
+				cornify_add();
+			}
+
+			console.log(pressed);
 		});
 
 </script>
