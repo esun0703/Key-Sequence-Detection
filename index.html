@@ -8,12 +8,24 @@
 <body>
 <script>
 	// Create array to contain typed words
+		const pressed = [];
 	// Secret code to look for
+		const secretCode = "emilysun"
 	// capture code pressed
-	window.addEventListener('keyup', e => {
-		console.log(e.key);
-	})
-	
+		window.addEventListener('keyup', e => {
+			// console.log(e.key);
+			// push each key into array
+			pressed.push(e.key);
+			// split the array the length of the secret code.
+			pressed.splice(-secretCode - 1, pressed.length - secretCode.length);
+			// if the array contains the secret code then alert or do something
+			if(pressed.join('').includes(secretCode)){
+				// console.log('Correct!!!');
+				cornify_add();
+			}
+
+			console.log(pressed);
+		});
 
 </script>
 </body>
